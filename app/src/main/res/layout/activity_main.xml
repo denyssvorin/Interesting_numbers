@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="main_presenter1"
+            type="com.example.interestingfactsaboutnumbers.presenter.MainPresenter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.MainActivity">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/text_view_fact"
+            app:layout_constraintEnd_toEndOf="@id/text_view_fact"
+            app:layout_constraintStart_toStartOf="@id/text_view_fact"
+            app:layout_constraintTop_toTopOf="@id/text_view_fact" />
+
+
+        <EditText
+            android:id="@+id/edit_text_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:gravity="center"
+            app:helperText="Required*"
+            android:inputType="number"
+            android:textColor="@color/purple_700"
+            android:textSize="64sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_default="wrap"
+            tools:text="55" />
+
+        <TextView
+            android:id="@+id/text_view_fact"
+            android:layout_width="match_parent"
+            android:layout_height="128dp"
+            android:layout_marginTop="32dp"
+            android:background="@color/light_grey_transparent"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="7"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/edit_text_number"
+            app:layout_constraintStart_toStartOf="@id/edit_text_number"
+            app:layout_constraintTop_toBottomOf="@id/edit_text_number"
+            tools:text="dfl;msdfkdsjf ldsjfoi jdois osdijgf sdiojf oijidjsf sodifj sdoifj sodfjsodifj sdofijfsd osdjf sdofojjfoisd osdjsodfjsdoffdjkgnlkdsfjg lkfdjhg dfgfdnfdfgsdfg dfgdfg sdfg dfg ddg dfg fdg fdg dfpig fg fjg dfglkdfngdfgldfkgjdfkgjhjgjgjgjgjgjgdoifgjsopidafjg;dsfgklf vzfogisrtargpfockj fogjfsdgj ogj fg fdfkgjh dfig dfg e fdjg fdg [sfog dfog d[fgja[fgvbiogoiaf fjgj[aifjgagjsfdg;sfdg jgdsjgfjsgifdogjs;kfg fg;kjs;dfkjg kfsgd;kf;sgk;sldfjg;lskfdjglskfjglsjgjgs;lgfjj;sfkgjsfd;gkj;skdgksjg;sdkfjgsdfkjg;ssjg;skjfg;skjgf;skjfg;slfkgj;skjfg;kfdsjg;skjfg;skfjgskfjg;skfgjskjfdg;kslfdjskjg;skfksdgj;k;skdjg;ks;skfdjg;sksdkfg;lksj;ksljdfg;lkj;skjfdgl;kskljdfgs;jk lkdfsglk ljdfgsoijg " />
+
+        <Button
+            android:id="@+id/button_get_fact"
+            style="Widget.Material3.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="GET FACT"
+            app:layout_constraintEnd_toEndOf="@+id/text_view_fact"
+            app:layout_constraintStart_toStartOf="@+id/text_view_fact"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_fact" />
+
+        <Button
+            android:id="@+id/button_get_random_fact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GET FACT ABOUT RANDOM NUMBER"
+            app:layout_constraintEnd_toEndOf="@+id/button_get_fact"
+            app:layout_constraintStart_toStartOf="@+id/button_get_fact"
+            app:layout_constraintTop_toBottomOf="@+id/button_get_fact" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_get_random_fact">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rc_round_corners" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp" />
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
